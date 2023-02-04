@@ -1,0 +1,20 @@
+{
+  "name": "bigfootds-shared-data",
+  "version": "1.0.0",
+  "description": "Shared data used by more than one service in the BigfootDS system.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BigfootDS/MS-Shared-Data.git"
+  },
+  "keywords": [],
+  "author": "Alex Holder <alex.holder@bigfootds.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BigfootDS/MS-Shared-Data/issues"
+  },
+  "homepage": "https://github.com/BigfootDS/MS-Shared-Data#readme"
+}
