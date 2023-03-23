@@ -1,5 +1,5 @@
 {
-  "name": "bigfootds-shared-data",
+  "name": "@bigfootds/bigfootds-shared-data",
   "version": "1.0.0",
   "description": "Shared data used by more than one service in the BigfootDS system.",
   "main": "src/index.js",
@@ -12,7 +12,7 @@
   },
   "keywords": [],
   "author": "Alex Holder <alex.holder@bigfootds.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/BigfootDS/MS-Shared-Data/issues"
   },
