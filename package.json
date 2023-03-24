@@ -1,10 +1,10 @@
 {
   "name": "@bigfootds/bigfootds-shared-data",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "Shared data used by more than one service in the BigfootDS system.",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --detectOpenHandles --ci"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,15 @@
   "bugs": {
     "url": "https://github.com/BigfootDS/MS-Shared-Data/issues"
   },
-  "homepage": "https://github.com/BigfootDS/MS-Shared-Data#readme"
+  "homepage": "https://github.com/BigfootDS/MS-Shared-Data#readme",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "testTimeout": 50000
+  }
 }

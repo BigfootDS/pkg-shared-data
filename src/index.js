@@ -1,6 +1,6 @@
-const { devWordArray, profanityArray } = require('./data/profanityList')
+const { devWordArray, profanityArray } = require('./data/profanityList');
 
-exports = {
+module.exports = {
 	WordBlacklists: {
 		ProfanityWords: profanityArray,
 		DeveloperReserved: devWordArray
