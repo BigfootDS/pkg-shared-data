@@ -27,8 +27,16 @@ jobs:
       - name: Automated Version Bump
         uses: phips28/gh-action-bump-version@v9.1.0
 
+      - name: Get new git commit SHA
+        id: committer
+        run: |
+          SHA=$(git rev-parse HEAD)
+          echo "::set-output name=commitid::$SHA"
+
   call_cicd_workflow:
     needs: test_and_bump
     name: Call the CD workflow
     uses: ./.github/workflows/cd.yml
     secrets: inherit
+    with:
+      latestSHA: ${{ test_and_bump.committer.outputs.commitid }}
