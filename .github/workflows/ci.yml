@@ -40,4 +40,4 @@ jobs:
     uses: ./.github/workflows/cd.yml
     secrets: inherit
     with:
-      latestSHA: ${{ jobs.test_and_bump.committer.outputs.latestSHA }}
+      latestSHA: ${{ needs.test_and_bump.committer.outputs.latestSHA }}
