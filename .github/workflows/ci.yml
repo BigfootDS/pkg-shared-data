@@ -32,8 +32,7 @@ jobs:
       - name: Get new git commit SHA
         id: committer
         run: |
-          SHA=$(git rev-parse HEAD)
-          echo "latestSHA=${{ SHA }}" >> $GITHUB_OUTPUT"
+          echo "latestSHA=${{$(git rev-parse HEAD)}}" >> $GITHUB_OUTPUT"
 
   call_cicd_workflow:
     needs: test_and_bump
