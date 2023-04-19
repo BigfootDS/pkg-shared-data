@@ -33,6 +33,7 @@ jobs:
         id: committer
         run: |
           SHA=$(git rev-parse HEAD)
+          echo "$SHA"
           echo "latestSHA=$SHA" >> "$GITHUB_OUTPUT"
 
   call_cicd_workflow:
