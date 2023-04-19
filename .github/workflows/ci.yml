@@ -5,6 +5,8 @@ on: [push]
 jobs:
   test_and_bump:
     runs-on: ubuntu-latest
+    outputs:
+      latestSHA: ${{ steps.committer.outputs.commitid }}
     permissions:
       contents: write
     steps:
@@ -31,7 +33,7 @@ jobs:
         id: committer
         run: |
           SHA=$(git rev-parse HEAD)
-          echo "::set-output name=commitid::$SHA"
+          echo "latestSHA=${{$SHA}}" >> $GITHUB_OUTPUT"
 
   call_cicd_workflow:
     needs: test_and_bump
