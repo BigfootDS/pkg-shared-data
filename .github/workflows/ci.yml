@@ -32,7 +32,7 @@ jobs:
       - name: Get new git commit SHA
         id: committer
         run: |
-          echo "latestSHA=${{$(git rev-parse HEAD)}}" >> $GITHUB_OUTPUT"
+          echo "latestSHA=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT"
 
   call_cicd_workflow:
     needs: test_and_bump
@@ -40,4 +40,4 @@ jobs:
     uses: ./.github/workflows/cd.yml
     secrets: inherit
     with:
-      latestSHA: ${{ jobs.test_and_bump.committer.outputs.commitid }}
+      latestSHA: ${{ jobs.test_and_bump.committer.outputs.latestSHA }}
