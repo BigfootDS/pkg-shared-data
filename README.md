@@ -2,6 +2,12 @@
 
 This package contains data used across multiple services, handled here in an effort to adhere to "D.R.Y" coding principles.
 
+## Links
+
+This package is published to these places:
+
+* [NPM](https://www.npmjs.com/package/@bigfootds/bigfootds-shared-data)
+
 ## Installation
 
 This is a scoped package, so its install command looks a little longer than normal. But it means you can guarantee that you'll be getting the package from BigfootDS!
