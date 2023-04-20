@@ -1,6 +1,6 @@
 {
   "name": "@bigfootds/bigfootds-shared-data",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "Shared data used by more than one service in the BigfootDS system.",
   "main": "src/index.js",
   "scripts": {
