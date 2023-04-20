@@ -13,6 +13,9 @@ jobs:
   publish_npm:
     name: Publish to NPM
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
       - name: Initialize repo
         uses: actions/checkout@v3
@@ -29,6 +32,6 @@ jobs:
         run: npm ci
       
       - name: Publish package 
-        run: npm publish 
+        run: npm publish --provenance --access public
         env: 
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
