@@ -4,27 +4,17 @@
   "description": "Shared data used by more than one service in the BigfootDS system.",
   "main": "src/index.js",
   "scripts": {
-    "test": "jest --detectOpenHandles --ci"
+    "test": "node --test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BigfootDS/MS-Shared-Data.git"
+    "url": "git+https://github.com/BigfootDS/pkg-shared-data.git"
   },
   "keywords": [],
   "author": "Alex Holder <alex.holder@bigfootds.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/BigfootDS/MS-Shared-Data/issues"
+    "url": "https://github.com/BigfootDS/pkg-shared-data/issues"
   },
-  "homepage": "https://github.com/BigfootDS/MS-Shared-Data#readme",
-  "devDependencies": {
-    "jest": "^29.5.0"
-  },
-  "jest": {
-    "testEnvironment": "node",
-    "coveragePathIgnorePatterns": [
-      "/node_modules/"
-    ],
-    "testTimeout": 50000
-  }
+  "homepage": "https://github.com/BigfootDS/pkg-shared-data#readme"
 }

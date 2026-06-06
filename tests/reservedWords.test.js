@@ -1,9 +1,10 @@
+const assert = require("node:assert/strict");
+const { describe, test } = require("node:test");
 const { WordBlacklists } = require("../src");
 
 
 describe("Developer reserved words contain the company name.", () => {
-	test("BigfootDS is a reserved word", () => {
-		expect(WordBlacklists.DeveloperReserved.includes("BigfootDS"));
-		expect(WordBlacklists.DeveloperReserved.includes("bigfootds"));
+	test("bigfootds is a reserved word", () => {
+		assert.ok(WordBlacklists.DeveloperReserved.includes("bigfootds"));
 	});
 })
