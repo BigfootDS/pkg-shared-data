@@ -1,4 +1,4 @@
-# BigfootDS Shared Microservice Data
+# BigfootDS Shared Data
 
 This package contains data used across multiple services, handled here in an effort to adhere to "D.R.Y" coding principles.
 
