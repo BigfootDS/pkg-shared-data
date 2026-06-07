@@ -13,15 +13,15 @@ jobs:
       contents: write
     steps:
       - name: Initialize repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v6
         with:
-          node-version: '18'
+          node-version: '24'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Run tests
         run: npm test
@@ -41,7 +41,9 @@ jobs:
   call_cicd_workflow:
     needs: test_and_bump
     name: Call the CD workflow
+    permissions:
+      contents: read
+      id-token: write
     uses: ./.github/workflows/cd.yml
-    secrets: inherit
     with:
       latestSHA: ${{ needs.test_and_bump.outputs.latestSHA }}

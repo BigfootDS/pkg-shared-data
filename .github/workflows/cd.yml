@@ -18,20 +18,19 @@ jobs:
       id-token: write
     steps:
       - name: Initialize repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
         with:
           ref: ${{ inputs.latestSHA }}
 
       - name: Prepare Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v6
         with:
-          node-version: '18.x'
+          node-version: '24'
           registry-url: 'https://registry.npmjs.org'
+          package-manager-cache: false
 
       - name: Prepare package
         run: npm ci
       
       - name: Publish package 
-        run: npm publish --provenance --access public
-        env: 
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+        run: npm publish --access public
