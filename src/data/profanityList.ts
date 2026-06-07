@@ -1,7 +1,7 @@
 /**
  * @const {string[]} - A list of lowercase strings considered profane, offensive, or otherwise incompatible with family-friendly content.
  */
-const profanityArray = [
+export const profanityArray: string[] = [
  "4r5e", 
  "50 yard cunt punt", 
  "5h1t", 
@@ -1112,17 +1112,10 @@ const profanityArray = [
 /**
  * @const {string[]} - A list of lowercase strings not considered profane, but are otherwise reserved for usage by BigfootDS staff.
  */
-const devWordArray = [
+export const devWordArray: string[] = [
     "bigfootds",
     "bigfoot",
     "bds",
     "developer",
     "staff"
 ]
-
-
-
-module.exports = {
-    profanityArray,
-    devWordArray
-}

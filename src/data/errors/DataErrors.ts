@@ -4,7 +4,9 @@
  * @classdesc Error containing information about a poorly-made user request, due to bad request data. This error is used when validationg a user request at the controller level.
  * @extends Error
  */
-class DataValidationRequestFailure extends Error {
+export class DataValidationRequestFailure extends Error {
+	httpStatus: number;
+	bdsCode: string;
 
 	/**
 	 * Create a new instance of this Error.
@@ -46,7 +48,9 @@ class DataValidationRequestFailure extends Error {
  * @classdesc Error containing information about a poorly-made user request, due to bad request data. This error is used when validating a user request at the database level.
  * @extends Error
  */
-class DataValidationDatabaseFailure extends Error {
+export class DataValidationDatabaseFailure extends Error {
+	httpStatus: number;
+	bdsCode: string;
 
 	/**
 	 * Create a new instance of this Error.
@@ -89,7 +93,9 @@ class DataValidationDatabaseFailure extends Error {
  * @classdesc Error containing information about a poorly-made user request, due to bad request data. This error is used when a user attempts to log in as a non-existent user.
  * @extends Error
  */
-class LoginFailureNoUser extends Error {
+export class LoginFailureNoUser extends Error {
+	httpStatus: number;
+	bdsCode: string;
 
 	/**
 	 * Create a new instance of this Error.
@@ -132,7 +138,9 @@ class LoginFailureNoUser extends Error {
  * @classdesc Error containing information about a poorly-made user request, due to bad request data. This error is used when a user attempts to log in as a valid user with invalid credentials.
  * @extends Error
  */
-class LoginFailureWrongCredentials extends Error {
+export class LoginFailureWrongCredentials extends Error {
+	httpStatus: number;
+	bdsCode: string;
 
 	/**
 	 * Create a new instance of this Error.
@@ -174,7 +182,9 @@ class LoginFailureWrongCredentials extends Error {
  * @classdesc Error to return when the request is correct, the server operates correctly, but the desired data just is not found.
  * @extends Error
  */
-class DataRetrievalFailure extends Error {
+export class DataRetrievalFailure extends Error {
+	httpStatus: number;
+	bdsCode: string;
 
 	/**
 	 * Create a new instance of this Error.
@@ -208,14 +218,4 @@ class DataRetrievalFailure extends Error {
 
 		Error.captureStackTrace(this, this.constructor);
 	}
-}
-
-
-
-
-
-module.exports = {
-	DataValidationRequestFailure, DataValidationDatabaseFailure,
-	LoginFailureNoUser, LoginFailureWrongCredentials,
-	DataRetrievalFailure
 }

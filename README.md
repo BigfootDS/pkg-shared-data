@@ -14,6 +14,16 @@ This is a scoped package, so its install command looks a little longer than norm
 
 `npm install @bigfootds/bigfootds-shared-data`
 
+## TypeScript
+
+This package ships generated TypeScript declarations with its compiled JavaScript output.
+
+```ts
+import { WordBlacklists } from "@bigfootds/bigfootds-shared-data";
+
+const reservedWords: string[] = WordBlacklists.DeveloperReserved;
+```
+
 ## Basic Usage
 
 Import the package and use it as an object:

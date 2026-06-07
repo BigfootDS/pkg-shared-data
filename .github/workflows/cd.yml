@@ -31,6 +31,9 @@ jobs:
 
       - name: Prepare package
         run: npm ci
+
+      - name: Build package
+        run: npm run build
       
       - name: Publish package 
         run: npm publish --access public --provenance
