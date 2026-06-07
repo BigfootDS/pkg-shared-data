@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "conventional-commit-summary": {
+      "source": "AlexStormwood/agentic-skills",
+      "sourceType": "github",
+      "skillPath": "conventional-commit-summary/SKILL.md",
+      "computedHash": "d998cbae5abc7e62c9b5c83c91440e8e02be35b90e4417097bec003a425aab62"
+    }
+  }
+}
