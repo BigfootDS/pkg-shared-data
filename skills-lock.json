@@ -6,6 +6,12 @@
       "sourceType": "github",
       "skillPath": "conventional-commit-summary/SKILL.md",
       "computedHash": "d998cbae5abc7e62c9b5c83c91440e8e02be35b90e4417097bec003a425aab62"
+    },
+    "jsdoc-code-comments": {
+      "source": "AlexStormwood/agentic-skills",
+      "sourceType": "github",
+      "skillPath": "jsdoc-code-comments/SKILL.md",
+      "computedHash": "a52898b06343d808c76cd92e028dbbafa0dc7e02d2a670ed0494591565137397"
     }
   }
 }

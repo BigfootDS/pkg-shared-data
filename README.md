@@ -19,68 +19,65 @@ This is a scoped package, so its install command looks a little longer than norm
 This package ships generated TypeScript declarations with its compiled JavaScript output.
 
 ```ts
-import { WordBlacklists } from "@bigfootds/bigfootds-shared-data";
+import { playerNameProfanityHandler } from "@bigfootds/bigfootds-shared-data";
 
-const reservedWords: string[] = WordBlacklists.DeveloperReserved;
+const result = playerNameProfanityHandler.check("admin");
+
+if (!result.isAllowed) {
+	console.log(result.matches);
+}
 ```
 
 ## Basic Usage
 
-Import the package and use it as an object:
+Import the package and use the profanity handlers for context-specific checks:
 
 ```js
 const bdsSharedData = require('@bigfootds/bigfootds-shared-data');
 
 console.log("Top-level items in the package are:")
 console.log(Object.keys(bdsSharedData));
-console.log("Items within the WordBlacklists object are:")
-console.log(Object.keys(bdsSharedData.WordBlacklists))
+console.log("Player name is allowed:")
+console.log(bdsSharedData.playerNameProfanityHandler.isAllowed("admin"))
 ```
 
 Output:
 
 ```
 Top-level items in the package are:
-[ 'WordBlacklists' ]
-Items within the WordBlacklists object are:
-[ 'ProfanityWords', 'DeveloperReserved' ]
+[ 'WordBlacklists', 'WordLists', 'ProfanityHandlers', ... ]
+Player name is allowed:
+false
 ```
 
-Use the data appropriately!
+Use the chat handler when only profanity should be detected or censored:
 
 ```js
-let profaneWord = "fuck";
+const { chatProfanityHandler } = require('@bigfootds/bigfootds-shared-data');
 
-if (bdsSharedData.WordBlacklists.ProfanityWords.includes(profaneWord)){
-	console.log("Profanity detected: " + profaneWord);
-}
+console.log(chatProfanityHandler.exists("I like big butts and I cannot lie"));
 ```
 
 Output:
 ```
-Profanity detected: fuck
+true
 ```
 
 
-Object destructuring syntax is fine to use, too.
+Use the player name handler when profanity, reserved words, and developer-only words should all be blocked:
 
 ```js
-const {WordBlacklists} = require('@bigfootds/bigfootds-shared-data');
+const { playerNameProfanityHandler } = require('@bigfootds/bigfootds-shared-data');
 
-console.log("Items within the WordBlacklists object are:")
-console.log(Object.keys(WordBlacklists))
+const result = playerNameProfanityHandler.check("bigfootds");
 
-let profaneWord = "fuck";
-
-if (WordBlacklists.ProfanityWords.includes(profaneWord)){
-	console.log("Profanity detected: " + profaneWord);
-}
+console.log(result.isAllowed);
+console.log(result.hasDevWord);
 ```
 
 Output:
 
 ```
-Items within the WordBlacklists object are:
-[ 'ProfanityWords', 'DeveloperReserved' ]
-Profanity detected: fuck
+false
+true
 ```

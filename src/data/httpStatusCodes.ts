@@ -1,3 +1,6 @@
+/**
+ * HTTP 2xx status codes used by BigfootDS services for successful requests.
+ */
 export const success = {
 	OK: 200,
 	CREATED: 201,
@@ -5,10 +8,16 @@ export const success = {
 	NO_CONTENT: 204
 } as const;
 
+/**
+ * HTTP 3xx status codes used when a client should resolve a request through a different URL.
+ */
 export const redirect = {
 	MOVED_PERMANENTLY: 301
 } as const;
 
+/**
+ * HTTP 4xx status codes used when the client request cannot be completed as submitted.
+ */
 export const clientError = {
 	BAD_REQUEST: 400,
 	UNAUTHORIZED: 401,
@@ -28,6 +37,9 @@ export const clientError = {
 	UNAVAILABLE_FOR_LEGAL_REASONS: 451
 } as const;
 
+/**
+ * HTTP 5xx status codes used when a BigfootDS service or upstream dependency fails.
+ */
 export const serverError = {
 	INTERNAL_SERVER_ERROR: 500,
 	NOT_IMPLEMENTED: 501,
