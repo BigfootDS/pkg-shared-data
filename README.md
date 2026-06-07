@@ -28,6 +28,26 @@ if (!result.isAllowed) {
 }
 ```
 
+Shared Bigfoot Fetcher metadata is exported here so services can configure headers without importing the fetch wrapper:
+
+```ts
+import {
+	BIGFOOT_FETCHER_HEADER_NAMES,
+	type BigfootDSConfig
+} from "@bigfootds/bigfootds-shared-data";
+
+const allowedHeaders = [
+	"Content-Type",
+	"Authorization",
+	...BIGFOOT_FETCHER_HEADER_NAMES
+];
+
+const serviceMetadata: BigfootDSConfig = {
+	productName: "@bigfootds/ms-auth",
+	platformType: "api"
+};
+```
+
 ## Basic Usage
 
 Import the package and use the profanity handlers for context-specific checks:

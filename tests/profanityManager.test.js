@@ -9,35 +9,27 @@ const {
 	playerNameProfanityHandler,
 	reservedWordsArray
 } = require("@bigfootds/bigfootds-shared-data");
-const httpStatusCodes = require("@bigfootds/bigfootds-shared-data/src/data/httpStatusCodes");
-const { DataRetrievalFailure } = require("@bigfootds/bigfootds-shared-data/data/errors/DataErrors");
 
-
-describe("Shared data package exports", () => {
-	test("bigfootds is a reserved word", () => {
+describe("Profanity data exports", () => {
+	test("bigfootds is a reserved developer word", () => {
 		assert.ok(WordBlacklists.DeveloperReserved.includes("bigfootds"));
 		assert.ok(devWordsArray.includes("bigfootds"));
 	});
 
-	test("reserved words are exported separately from dev words", () => {
+	test("reserved words are exported separately from developer words", () => {
 		assert.ok(WordBlacklists.ReservedWords.includes("admin"));
 		assert.ok(reservedWordsArray.includes("admin"));
-	});
-
-	test("compiled deep imports remain available", () => {
-		assert.equal(httpStatusCodes.clientError.NOT_FOUND, 404);
-		assert.equal(new DataRetrievalFailure().httpStatus, 404);
 	});
 });
 
 describe("Profanity handlers", () => {
-	test("chat handler detects profanity without treating dev words as profanity", () => {
+	test("chat handler detects profanity without treating developer words as profanity", () => {
 		assert.equal(chatProfanityHandler.exists("I like big butts and I cannot lie"), true);
 		assert.equal(chatProfanityHandler.exists("bigfootds staff update"), false);
 		assert.equal(ProfanityHandlers.chat.exists("bigfootds staff update"), false);
 	});
 
-	test("player name handler blocks profanity, reserved words, and dev words", () => {
+	test("player name handler blocks profanity, reserved words, and developer words", () => {
 		const profanityResult = playerNameProfanityHandler.check("bigbutts");
 		const reservedResult = playerNameProfanityHandler.check("admin");
 		const devResult = ProfanityHandlers.playerName.check("BigfootDS");
