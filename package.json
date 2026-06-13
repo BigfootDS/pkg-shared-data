@@ -43,11 +43,6 @@
       "require": "./dist/data/profanityList.js",
       "default": "./dist/data/profanityList.js"
     },
-    "./profanityManager": {
-      "types": "./dist/profanityManager.d.ts",
-      "require": "./dist/profanityManager.js",
-      "default": "./dist/profanityManager.js"
-    },
     "./src": {
       "types": "./dist/index.d.ts",
       "require": "./dist/index.js",
@@ -72,16 +67,6 @@
       "types": "./dist/data/projects.d.ts",
       "require": "./dist/data/projects.js",
       "default": "./dist/data/projects.js"
-    },
-    "./src/profanityManager": {
-      "types": "./dist/profanityManager.d.ts",
-      "require": "./dist/profanityManager.js",
-      "default": "./dist/profanityManager.js"
-    },
-    "./src/profanityManager.js": {
-      "types": "./dist/profanityManager.d.ts",
-      "require": "./dist/profanityManager.js",
-      "default": "./dist/profanityManager.js"
     },
     "./src/data/bigfootFetcher": {
       "types": "./dist/data/bigfootFetcher.d.ts",
@@ -155,8 +140,5 @@
   "devDependencies": {
     "@types/node": "^25.9.2",
     "typescript": "^6.0.3"
-  },
-  "dependencies": {
-    "@2toad/profanity": "^3.3.0"
   }
 }

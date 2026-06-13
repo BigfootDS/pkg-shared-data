@@ -7,10 +7,10 @@ This package contains data used across multiple services, handled here in an eff
 This checklist tracks the first pass needed before downstream ecosystem work depends on this package.
 
 - [ ] Deprecate or move runtime error constructors into `pkg-service-utils` once consumers have migrated.
-- [ ] Deprecate or move profanity matching/normalisation helpers into `pkg-service-utils` or a dedicated moderation helper package once consumers have migrated.
+- [x] Move profanity matching/normalisation helpers into `pkg-service-utils`.
 - [ ] Review whether every `main` push should auto-bump and publish this data package.
 
-The old `DataErrors` classes and profanity handlers are still exported for compatibility. New ecosystem work should prefer the static data/catalogue exports unless it deliberately needs those legacy helpers.
+The old `DataErrors` classes are still exported for compatibility. Runtime profanity matching and `@2toad/profanity` integration now live in `@bigfootds/bigfootds-service-utils`; this package owns only static profanity/restricted-word list data and metadata.
 
 ## Public Package Safety
 
@@ -134,10 +134,10 @@ ms-auth
 }
 ```
 
-Compatibility profanity handlers are still available for existing consumers. New shared runtime matching behaviour should move to `pkg-service-utils` or a dedicated moderation helper package when consumers are ready to migrate.
+Runtime profanity handlers live in `@bigfootds/bigfootds-service-utils`:
 
 ```js
-const { playerNameProfanityHandler } = require('@bigfootds/bigfootds-shared-data');
+const { playerNameProfanityHandler } = require('@bigfootds/bigfootds-service-utils');
 
 const result = playerNameProfanityHandler.check("bigfootds");
 
@@ -149,19 +149,5 @@ Output:
 
 ```
 false
-true
-```
-
-Use the chat handler when only profanity should be detected or censored:
-
-```js
-const { chatProfanityHandler } = require('@bigfootds/bigfootds-shared-data');
-
-console.log(chatProfanityHandler.exists("I like big butts and I cannot lie"));
-```
-
-Output:
-
-```
 true
 ```

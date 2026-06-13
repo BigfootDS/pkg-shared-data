@@ -9,32 +9,6 @@ export * from "./data/bigfootFetcher";
 export * as BigfootFetcherData from "./data/bigfootFetcher";
 export * as HttpStatusCodes from "./data/httpStatusCodes";
 export * from "./data/profanityList";
-export {
-	CensorType,
-	Profanity,
-	ProfanityHandlers,
-	ProfanityOptions,
-	chatProfanityHandler,
-	defaultProfanityLanguages,
-	findRestrictedWords,
-	getSupportedProfanityLanguageForLocale,
-	isSupportedProfanityLanguage,
-	normalizeRestrictedWord,
-	playerNameProfanityHandler,
-	profaneWords,
-	profanity,
-	supportedProfanityLanguages,
-	targetProfanityLanguages
-} from "./profanityManager";
-
-export type {
-	ChatCensorOptions,
-	PlayerNameCheckOptions,
-	PlayerNameCheckResult,
-	ProfanityLanguageOptions,
-	SupportedProfanityLanguage,
-	TargetProfanityLanguage
-} from "./profanityManager";
 
 /**
  * Backwards-compatible grouped word lists exposed by the package root.
@@ -57,8 +31,8 @@ export interface WordBlacklists {
 /**
  * Backwards-compatible word-list object retained for older consumers.
  *
- * It no longer contains a profanity array; profanity detection is handled by
- * `chatProfanityHandler` and `playerNameProfanityHandler`.
+ * It no longer contains a profanity array; runtime profanity detection is handled by
+ * `@bigfootds/bigfootds-service-utils`.
  */
 export const WordBlacklists: WordBlacklists = {
 	DeveloperReserved: devWordsArray,
