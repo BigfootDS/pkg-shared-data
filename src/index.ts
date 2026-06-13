@@ -1,11 +1,14 @@
 import { devWordsArray, reservedWordsArray } from "./data/profanityList";
 
+export * from "./data/projects";
 export * from "./data/errors/DataErrors";
+export * from "./data/errors/errorCatalogue";
 export * as DataErrors from "./data/errors/DataErrors";
+export * as ErrorCatalogue from "./data/errors/errorCatalogue";
 export * from "./data/bigfootFetcher";
 export * as BigfootFetcherData from "./data/bigfootFetcher";
 export * as HttpStatusCodes from "./data/httpStatusCodes";
-export { devWordsArray, reservedWordsArray } from "./data/profanityList";
+export * from "./data/profanityList";
 export {
 	CensorType,
 	Profanity,

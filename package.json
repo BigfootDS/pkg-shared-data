@@ -13,6 +13,11 @@
       "require": "./dist/index.js",
       "default": "./dist/index.js"
     },
+    "./data/projects": {
+      "types": "./dist/data/projects.d.ts",
+      "require": "./dist/data/projects.js",
+      "default": "./dist/data/projects.js"
+    },
     "./data/bigfootFetcher": {
       "types": "./dist/data/bigfootFetcher.d.ts",
       "require": "./dist/data/bigfootFetcher.js",
@@ -22,6 +27,11 @@
       "types": "./dist/data/errors/DataErrors.d.ts",
       "require": "./dist/data/errors/DataErrors.js",
       "default": "./dist/data/errors/DataErrors.js"
+    },
+    "./data/errors/errorCatalogue": {
+      "types": "./dist/data/errors/errorCatalogue.d.ts",
+      "require": "./dist/data/errors/errorCatalogue.js",
+      "default": "./dist/data/errors/errorCatalogue.js"
     },
     "./data/httpStatusCodes": {
       "types": "./dist/data/httpStatusCodes.d.ts",
@@ -53,6 +63,16 @@
       "require": "./dist/index.js",
       "default": "./dist/index.js"
     },
+    "./src/data/projects": {
+      "types": "./dist/data/projects.d.ts",
+      "require": "./dist/data/projects.js",
+      "default": "./dist/data/projects.js"
+    },
+    "./src/data/projects.js": {
+      "types": "./dist/data/projects.d.ts",
+      "require": "./dist/data/projects.js",
+      "default": "./dist/data/projects.js"
+    },
     "./src/profanityManager": {
       "types": "./dist/profanityManager.d.ts",
       "require": "./dist/profanityManager.js",
@@ -82,6 +102,16 @@
       "types": "./dist/data/errors/DataErrors.d.ts",
       "require": "./dist/data/errors/DataErrors.js",
       "default": "./dist/data/errors/DataErrors.js"
+    },
+    "./src/data/errors/errorCatalogue": {
+      "types": "./dist/data/errors/errorCatalogue.d.ts",
+      "require": "./dist/data/errors/errorCatalogue.js",
+      "default": "./dist/data/errors/errorCatalogue.js"
+    },
+    "./src/data/errors/errorCatalogue.js": {
+      "types": "./dist/data/errors/errorCatalogue.d.ts",
+      "require": "./dist/data/errors/errorCatalogue.js",
+      "default": "./dist/data/errors/errorCatalogue.js"
     },
     "./src/data/httpStatusCodes": {
       "types": "./dist/data/httpStatusCodes.d.ts",
